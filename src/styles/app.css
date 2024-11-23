@@ -30,7 +30,6 @@
     position: absolute;
     inset: 0;
     backdrop-filter: blur(8px);
-    z-index: 10; /* Overlay memiliki z-index rendah */
   }
   
   
