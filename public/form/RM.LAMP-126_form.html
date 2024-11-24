@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serah Terima Pasien Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            margin: 20px;
+        }
+        .card {
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border: none; /* Remove card border */
+            position: relative; /* Positioning context for absolute elements */
+        }
+        .table td, .table th {
+            vertical-align: middle;
+            border: none; /* Remove table borders */
+        }
+        textarea.form-control, input.form-control {
+            border: 1px solid #ced4da; /* Light border for form inputs */
+        }
+        .submit-btn {
+            bottom: 20px; 
+            position: relative;
+        }
+        /* Align left for the columns */
+        .table td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Card Wrapper -->
+        <div class="card">
+            <!-- Form Header -->
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <h1>RESUME MEDIS RAWAT JALAN / IGD </h1>
+                </div>
+                <!-- Submit Button -->
+                <div class="text-end submit-btn">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <hr>
+            </div>
+
+            
+
+          
+            <thead  >
+                <tr>
+                    <h5 class="mb-3"><b>Resume Medis :</b></h5>
+                  
+                </tr>
+            </thead>
+          
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <label for="diagnosa" class="form-label">No .RM</label>
+                    <input type="number" class="form-control" id="diagnosa" placeholder="Masukkan No RM">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="diagnosa" class="form-label">Nama Pasien</label>
+                    <input type="text" class="form-control" id="diagnosa" placeholder="Masukkan Nama">
+                </div>
+             
+            </div>
+            <div class="row mb-4">
+                  <div class="row mb-3">
+                    <!-- Umur Input -->
+                    <div class="col-md-6">
+                        <label for="umur" class="form-label">Tanggal Lahir :</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Hari">
+                            <span class="input-group-text">Hari</span>
+                            <input type="number" class="form-control" placeholder="Bulan">
+                            <span class="input-group-text">Bulan</span>
+                            <input type="number" class="form-control" id="umur" placeholder="Tahun">
+                            <span class="input-group-text">Tahun</span>
+                        </div>
+                    </div>
+                    <!-- Jenis Kelamin Radio Buttons -->
+                    <div class="col-md">
+                        <label class="form-label">Jenis Kelamin :</label>
+                        <div class="d-flex align-items-center" style="position: relative; top: 5px;" >
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenisKelamin" id="lakiLaki" value="Laki-laki">
+                                <label class="form-check-label" for="lakiLaki">Laki-laki</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenisKelamin" id="perempuan" value="Perempuan">
+                                <label class="form-check-label" for="perempuan">Perempuan</label>
+                            </div>
+                        </div>
+                        </div>
+                    
+            </div>
+
+            <div class="row mb-4    ">
+                <!-- Pekerjaan -->
+                <div class="col-md-12>
+                    <label for="pekerjaan" class="form-label">Jaminan :</label>
+                    <input type="text" class="form-control" id="pekerjaan" placeholder="Masukkan Jaminan">
+                </div>
+            </div>
+
+
+            <!-- 2 -->
+            <thead  >
+                <tr>
+                        <h5 class="mb-3"><b>POLIKLINIK /
+                            IGD*) : </b></h5>
+                  
+                </tr>
+            </thead>
+
+            <div class="col-md-4">
+                <label for="tanggal-berobat" class="form-label">Tanggal Berobat :</label>
+                <div class="input-group">
+                    <input type="date" class="form-control" id="tanggal-berobat" placeholder="Pilih Tanggal Berobat">
+                </div>
+            </div>
+            
+
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <label for="pengkajian" class="form-label">Riwayat Masuk :</label>
+                    <textarea class="form-control" id="pengkajian" rows="3" placeholder="Tuliskan pengkajian..."></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="pengkajian" class="form-label">Pemeriksaan Fisik :</label>
+                    <textarea class="form-control" id="pengkajian" rows="3" placeholder="Tuliskan pengkajian..."></textarea>
+                </div>
+            </div>
+
+            <!-- 3-->
+            <thead  >
+                <tr>
+                    <p class="mb-3"><b><i>Hasil Penunjangan :</i></b></p>
+                  
+                </tr>
+            </thead>
+            <div class="row mt-1">
+                <div class="col-md-12">
+                    <label for="pengkajian" class="form-label">Laboratorium :</label>
+                    <textarea class="form-control" id="pengkajian" rows="2" placeholder="Tuliskan pengkajian..."></textarea>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <label for="pengkajian" class="form-label">Radiologi :</label>
+                    <textarea class="form-control" id="pengkajian" rows="2" placeholder="Tuliskan pengkajian..."></textarea>
+                </div>
+            </div>
+            <div class="row mt-3 mb-3">
+                <div class="col-md-12">
+                    <label for="pengkajian" class="form-label">Lain-lain :</label>
+                    <textarea class="form-control" id="pengkajian" rows="2" placeholder="Tuliskan pengkajian..."></textarea>
+                </div>
+            </div>
+
+            <thead  >
+                <tr>
+                    <p class="mb-3"><b><i>Obat / Terapi yang diberikan di RS :</i></b></p>
+                  
+                </tr>
+            </thead>
+            <div class="row ">
+                <div class="col-md-12">
+                    <textarea class="form-control" id="pengkajian" rows="3" placeholder="Tuliskan pengkajian..."></textarea>
+                </div>
+            </div>
+
+
+            <!-- 4 -->
+                    <div class="mt-3">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="mb-0"><b>Diagnosa :</b></h5>
+                            </div>
+                            <div class="col-md-4">
+                                <h5 class="mb-0"><b>ICD X</b></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <label for="utama" class="col-md-2 col-form-label">Utama :</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-sm mb-2" id="utama1" placeholder="">
+                                
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control form-control-sm mb-2" id="icd1" placeholder="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="tambahan" class="col-md-2 col-form-label">Tambahan :</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="1.">
+                                <input type="text" class="form-control form-control-sm mb-2" id="tambahan2" placeholder="2.">
+                                <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="3.">
+                                <input type="text" class="form-control form-control-sm" id="tambahan2" placeholder="4.">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="1.">
+                                <input type="text" class="form-control form-control-sm mb-2" id="tambahan2" placeholder="2.">
+                                <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="3.">
+                                <input type="text" class="form-control form-control-sm" id="tambahan2" placeholder="4.">
+                            </div>
+                        </div>
+                    </div>
+     
+
+            <!-- 5 -->
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="mb-0"><b>Tindakan / Prosedur :</b></h5>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="mb-0"><b>Kode Prosedur</b></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="1.">
+                        <input type="text" class="form-control form-control-sm mb-2" id="tambahan2" placeholder="2.">
+                        <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="3.">
+                        <input type="text" class="form-control form-control-sm" id="tambahan2" placeholder="4.">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="1.">
+                        <input type="text" class="form-control form-control-sm mb-2" id="tambahan2" placeholder="2.">
+                        <input type="text" class="form-control form-control-sm mb-2" id="tambahan1" placeholder="3.">
+                        <input type="text" class="form-control form-control-sm" id="tambahan2" placeholder="4.">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 6 -->
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="mb-0"><b>Pesan Penting :</b></h5>
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="card-body">
+                
+                <div class="row  ">
+                    <div class="col-md-12 mt-2">
+                        <label for="pengkajian" class="form-label">Penyakit :</label>
+                        <textarea class="form-control" id="pengkajian" rows="2" placeholder="Tuliskan pengkajian..."></textarea>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="pengkajian" class="form-label">Gizi / Nutrisi :</label>
+                        <textarea class="form-control" id="pengkajian" rows="2" placeholder="Tuliskan pengkajian..."></textarea>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="pengkajian" class="form-label">Keadaan Darurat :</label>
+                        <textarea class="form-control" id="pengkajian" rows="2" placeholder="Tuliskan pengkajian..."></textarea>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="pengkajian" class="form-label">Lain-lain :</label>
+                        <textarea class="form-control" id="pengkajian" rows="2" placeholder="Tuliskan pengkajian..."></textarea>
+                    </div>
+                </div>
+                     
+                </div>
+            </div>
+
+             
+            
+           
+          
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

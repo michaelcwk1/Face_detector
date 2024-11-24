@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Pemberian Obat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For icons -->
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body bg-light" style="max-height: 500px; overflow-y: auto;" >
+                <div class="mt-4 mb-3 d-flex justify-content-start">
+                    <div class="card col-md-12 shadow">
+                        <div class="card-header text-center fw-bold text-white bg-primary">CATATAN PEMBERIAN OBAT</div>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                    <button class="btn btn-primary me-2">
+                        <i class="fas fa-save"></i> Cetak
+                    </button>
+                    <button class="btn btn-primary me-2">
+                        <i class="fas fa-save"></i> Cetak Range Date
+                    </button>
+                    <button class="btn btn-secondary me-2">
+                        <i class="fas fa-save"></i> Buat Obat Racik
+                    </button>
+                </div>
+                <form id="obatForm">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Tgl Pemberian</label>
+                        <div class="col-sm-4">
+                            <input type="date" class="form-control" id="tgl_pemberian" name="tgl_pemberian">
+                        </div>
+                        <label class="col-sm-1 col-form-label">Sisa</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="Sisa" name="Sisa" placeholder="Sisa...">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Jenis Obat</label>
+                        <div class="col-sm-4">
+                            <select class="form-select" id="jenis_obat" name="jenis_obat">
+                                <option value="">Pilih Jenis</option>
+                                <option value="Obat A">Obat A</option>
+                                <option value="Obat B">Obat B</option>
+                                <option value="Obat C">Obat C</option>
+                            </select>
+                        </div>
+                        <label class="col-sm-1 col-form-label">Waktu</label>
+                        <div class="col-sm-4">
+                            <select class="form-select" id="waktu" name="waktu">
+                                <option value="">Pilih Waktu</option>
+                                <option value="Pagi">Pagi</option>
+                                <option value="Siang">Siang</option>
+                                <option value="Malam">Malam</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Nama Obat</label>
+                        <div class="col-sm-4">
+                            <select class="form-select" id="nama_obat" name="nama_obat">
+                                <option value="">Pilih Nama Obat</option>
+                                <option value="Obat 1">Obat 1</option>
+                                <option value="Obat 2">Obat 2</option>
+                                <option value="Obat 3">Obat 3</option>
+                            </select>
+                        </div>
+                        <label class="col-sm-1 col-form-label">Jam</label>
+                        <div class="col-sm-4">
+                            <input type="time" class="form-control" id="jam" name="jam">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Dosis</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="dosis" name="dosis" placeholder="Dosis...">
+                        </div>
+                        <label class="col-sm-1 col-form-label">Catatan</label>
+                        <div class="col-sm-4">
+                            <textarea class="form-control" id="catatan" name="catatan" placeholder="Catatan..." rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Rute</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="rute" name="rute" placeholder="Rute...">
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="alert alert-info" style="font-size: 13px;">
+                                <small>
+                                    (Ex: Stop tgl 01 Jan 2024 / Lanjut tgl 02 Jan 2024)<br>
+                                    Gunakan kata "STOP" untuk memberi tanda (baris obat berwarna merah) pada baris obat yang distop<br>
+                                    Gunakan kata "LANJUT" untuk menghilangkan tanda stop pada baris obat yang distop
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-success" onclick="addDataFromForm()">Tambah ke Tabel</button>
+                    </div>
+                </form>
+                <div class="card shadow mt-3" style="font-size: 13px;">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">List Pemberian Obat</h6>
+                    </div>
+                    <div class="table-responsive mt-4">
+                        <table class="table table-bordered" id="dataTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Detail</th>
+                                    <th>Action</th>
+                                    <th>Jenis</th>
+                                    <th>Tanggal</th>
+                                    <th>Nama Obat</th>
+                                    <th>Dosis</th>
+                                    <th>Rute</th>
+                                    <th>Sisa Obat</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Table rows will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 2 -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body bg-light" style="max-height: 500px; overflow-y: auto;">
+                 
+                <form id="obatForm">
+                    <div class="mt-5">
+                        <div class="card  mb-3 d-flex justify-content-">
+                            <div class="card col-sm-3  shadow" style="border-radius: 12px; overflow: hidden; position: relative; bottom: 23px;">
+                                <div class="card-header  bg-light-subtle text-center fw-bold">Buat Obat Racik</div>
+                            </div>
+                            <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Tanggal Pemberian</label>
+                                <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-4 me-3 d-flex align-items-center">
+                                        :&nbsp;<input type="date" class="form-control" id="" data-field=""  placeholder=" ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Jenis Racik</label>
+                                <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="Jenis Racik">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Rute</label>
+                                <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="Rutek">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Sisa</label>
+                                <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="Sisa">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Catatan</label>
+                                <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        :&nbsp;<textarea  class="form-control" id="" data-field=""  placeholder="Catatan"> </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                              <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Nama Obat</label>
+                                <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        :&nbsp;<select type="text" class="form-control" id="" data-field=""  placeholder="Nama Obat">
+                                            <option value="">w</option>
+                                            <option value="">w</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Dosis</label>
+                                <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="Dosis">
+                                    </div>
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        <button type="button" class="btn btn-success" onclick="addDataFromForm()">Tambah Item</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row m-1">
+                                <label class="col-sm-2 col-form-label">Waktu</label>
+                                <div class="col-sm-10 d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                    <div class="form-check col-sm-3 me-3 d-flex align-items-center">
+                                        :&nbsp;<select class="form-select" id="waktu" name="waktu">
+                                            <option value="">Pilih Waktu</option>
+                                            <option value="Pagi">Pagi</option>
+                                            <option value="Siang">Siang</option>
+                                            <option value="Malam">Malam</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <label class="">Jam</label>
+                                    <div class="form-check col-sm-2 me-3 d-flex align-items-center">
+                                        :&nbsp;<input type="time" class="form-control" id="jam" name="jam">
+                                    </div>
+                            
+                                    <div class="form-check col-sm-5 me-3 d-flex align-items-center">
+                                        <button type="button" class="btn btn-success" onclick="addDataFromForm()">Tambah Item</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                </form>
+                <div class="card shadow mt-3" style="font-size: 13px; ">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">Daftar Obat Racikan</h6>
+                    </div>
+                    <div class="table-responsive ">
+                        <table class="table table-bordered" id="dataTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Nama Obat</th>
+                                    <th>Dosis</th>
+                                    <th>Action</th>
+                                    <th width="30%"></th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr>
+                                    <td height="100px"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card shadow mt-3" style="font-size: 13px; ">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">Waktu Pemberian Obat Racik</h6>
+                    </div>
+                    <div class="table-responsive ">
+                        <table class="table table-bordered" id="dataTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Waktu</th>
+                                    <th>Jam</th>
+                                    <th>Action</th>
+                                    <th width="30%"></th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td height="100px"></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+         <!-- Modal -->
+        <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModalLabel">Detail Obat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Existing information will be passed from the table -->
+                        <strong>Waktu: </strong><span id="modalWaktu"></span><br>
+                        <strong>Jam: </strong><span id="modalJam"></span><br>
+                        <strong>Diberikan Oleh: </strong><span id="modalDiberikanOleh"></span><br>
+                        <strong>Tanggal Periksa: </strong><span id="modalTanggalPeriksa"></span><br><br>
+
+                        <!-- Action buttons (Periksa and Hapus) -->
+                        <div id="actionButtons" class="d-none">
+                            <button class="btn btn-primary" id="periksaBtn">Periksa</button>
+                            <button class="btn btn-danger" id="hapusBtn">Hapus</button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        let rowCount = 0;
+        let editingRow = null;
+
+        function addDataFromForm() {
+            const tglPemberian = document.getElementById('tgl_pemberian').value;
+            const sisa = document.getElementById('Sisa').value;
+            const jenisObat = document.getElementById('jenis_obat').value;
+            const waktuObat = document.getElementById('waktu').value;
+            const namaObat = document.getElementById('nama_obat').value;
+            const ruteObat = document.getElementById('rute').value;
+            const dosisObat = document.getElementById('dosis').value;
+            const catatanObat = document.getElementById('catatan').value;
+
+            if (!tglPemberian || !namaObat || !dosisObat || !ruteObat) {
+                alert("Tolong lengkapi semua form!");
+                return;
+            }
+
+            if (editingRow) {
+                // Update existing row
+                const cells = editingRow.getElementsByTagName('td');
+                cells[3].textContent = jenisObat;
+                cells[4].textContent = tglPemberian;
+                cells[5].textContent = namaObat;
+                cells[6].textContent = dosisObat;
+                cells[7].textContent = ruteObat;
+                cells[8].textContent = sisa;
+                editingRow = null;
+                document.getElementById('obatForm').reset();
+                return;
+            }
+
+            rowCount++;
+
+            const tableBody = document.getElementById("tableBody");
+            const row = tableBody.insertRow();
+
+            row.innerHTML = `
+                <td>${rowCount}</td>
+                <td><button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="showDetails('${jenisObat}', '${namaObat}', '${dosisObat}', '${ruteObat}', '${tglPemberian}')"><i class="fas fa-plus" id="detailIcon${rowCount}"></i></button></td>
+                <td>
+                    <button class="btn btn-primary btn-sm" onclick="editRow(this)">Edit</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button>
+                </td>
+                <td>${jenisObat}</td>
+                <td>${tglPemberian}</td>
+                <td>${namaObat}</td>
+                <td>${dosisObat}</td>
+                <td>${ruteObat}</td>
+                <td>${sisa}</td>
+            `;
+
+            document.getElementById('obatForm').reset();
+        }
+
+        function showDetails(waktu, jam, diberikanOleh, tanggalPeriksa, showActions = true) {
+            document.getElementById('modalWaktu').textContent = waktu;
+            document.getElementById('modalJam').textContent = jam;
+            document.getElementById('modalDiberikanOleh').textContent = diberikanOleh;
+            document.getElementById('modalTanggalPeriksa').textContent = tanggalPeriksa;
+
+            const actionButtons = document.getElementById('actionButtons');
+            if (showActions) {
+                actionButtons.classList.remove('d-none'); // Show action buttons
+            } else {
+                actionButtons.classList.add('d-none'); // Hide action buttons
+            }
+
+            document.getElementById('periksaBtn').addEventListener('click', function() {
+                alert("Periksa action triggered");
+            });
+
+            document.getElementById('hapusBtn').addEventListener('click', function() {
+                alert("Hapus action triggered");
+            });
+        }   
+
+        function deleteRow(button) {
+            const row = button.closest('tr');
+            row.remove();
+        }
+
+        function editRow(button) {
+            const row = button.closest('tr');
+            const cells = row.getElementsByTagName('td');
+            document.getElementById('tgl_pemberian').value = cells[4].textContent;
+            document.getElementById('Sisa').value = cells[8].textContent;
+            document.getElementById('jenis_obat').value = cells[3].textContent;
+            document.getElementById('waktu').value = cells[5].textContent;
+            document.getElementById('nama_obat').value = cells[6].textContent;
+            document.getElementById('rute').value = cells[7].textContent;
+            document.getElementById('dosis').value = cells[6].textContent; // Assuming "dosis" was in the same column
+            editingRow = row;  
+        }
+
+        function toggleDetailIcon(button) {
+            const icon = button.querySelector('i');
+            if (icon.classList.contains('fa-plus')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serah Terima Pasien Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            margin: 20px;
+        }
+        .card {
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border: none; /* Remove card border */
+            position: relative; /* Positioning context for absolute elements */
+        }
+        .table td, .table th {
+            vertical-align: middle;
+            border: none; /* Remove table borders */
+        }
+        textarea.form-control, input.form-control {
+            border: 1px solid #ced4da; /* Light border for form inputs */
+        }
+        .submit-btn {
+            margin-top: 20px; /* Space above the button */
+        }
+        /* Align left for the columns */
+        .table td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Card Wrapper -->
+        <div class="card">
+            <!-- Form Header -->
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <h1>Serah Terima Pasien</h1>
+                    <hr>
+                </div>
+            </div>
+
+            <!-- Diagnosa and Doctor Information -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="diagnosa" class="form-label">Diagnosa:</label>
+                    <input type="text" class="form-control" id="diagnosa" placeholder="Masukkan diagnosa pasien">
+                </div>
+             
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="diagnosa" class="form-label">Dokter yang Merawat:</label>
+                    <input type="text" class="form-control" id="diagnosa" placeholder="Masukkan Nama Dokter">
+                </div>
+                <div class="col-md-6">
+                    <label for="dokter" class="form-label">Rawat bersama dengan dokter : </label>
+                    <input type="text" class="form-control" id="dokter" placeholder="Masukkan nama dokter">
+                </div>
+            </div>
+            <thead  >
+                <tr>
+                    <strong class="mb-3">Keadaan saat ini :</strong>
+                  
+                </tr>
+            </thead>
+
+            <!-- Current Condition -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="gcs" class="form-label">Kesadaran / GCS:</label>
+                    <input type="number" class="form-control" id="gcs" placeholder="GCS">
+                </div>
+                <div class="col-md-4">
+                    <label for="tekDarah" class="form-label">Tekanan Darah:</label>
+                    <input type="number" class="form-control" id="tekDarah" placeholder="mmHg">
+                </div>
+                <div class="col-md-4">
+                    <label for="nadi" class="form-label">Nadi:</label>
+                    <input type="number" class="form-control" id="nadi" placeholder="x/menit">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="pernafasan" class="form-label">Pernafasan:</label>
+                    <input type="number" class="form-control" id="pernafasan" placeholder="x/menit">
+                </div>
+                <div class="col-md-4">
+                    <label for="suhu" class="form-label">Suhu:</label>
+                    <input type="number" class="form-control" id="suhu" placeholder="°C">
+                </div>
+                <div class="col-md-4">
+                    <label for="bb" class="form-label">BB:</label>
+                    <input type="number" class="form-control" id="bb" placeholder="Kg">
+                </div>
+            </div>
+
+            <!-- Table for Medical Actions -->
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Tindakan / Pemeriksaan</th>
+                            <th>Sudah</th>
+                            <th>Belum</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Memasang infus</td>
+                            <td><input type="radio" name="infus" value="sudah"></td>
+                            <td><input type="radio" name="infus" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Memasang DC</td>
+                            <td><input type="radio" name="dc" value="sudah"></td>
+                            <td><input type="radio" name="dc" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Memasang NGT</td>
+                            <td><input type="radio" name="ngt" value="sudah"></td>
+                            <td><input type="radio" name="ngt" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Tindakan</td>
+                            <td><input type="radio" name="ngt" value="sudah"></td>
+                            <td><input type="radio" name="ngt" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Konsul Dokter Spesialis</td>
+                            <td><input type="radio" name="ngt" value="sudah"></td>
+                            <td><input type="radio" name="ngt" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Pemeriksaan EKG</td>
+                            <td><input type="radio" name="ekg" value="sudah"></td>
+                            <td><input type="radio" name="ekg" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Pemeriksaan Laboratorium</td>
+                            <td><input type="radio" name="laboratorium" value="sudah"></td>
+                            <td><input type="radio" name="laboratorium" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Pemeriksaan Rontgen</td>
+                            <td><input type="radio" name="laboratorium" value="sudah"></td>
+                            <td><input type="radio" name="laboratorium" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Pemeriksaan CT Scan</td>
+                            <td><input type="radio" name="laboratorium" value="sudah"></td>
+                            <td><input type="radio" name="laboratorium" value="belum"></td>
+                            <td><textarea class="form-control" rows="2"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Additional Section -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <strong for="pemberianO2" class="form-label " >Pemberian O2:</strong>
+                    <input type="number" class="form-control" id="pemberianO2" placeholder="L/menit">
+                </div>
+                <div class="col-md-6">
+                    <strong for="fisioterapi" class="form-label">Fisioterapi:</strong>
+                    <input type="text" class="form-control" id="fisioterapi" placeholder="Fisioterapi">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <strong for="instruksi" class="form-label">Instruksi Terakhir:</strong>
+                    <input type="text" class="form-control" id="instruksi" placeholder="Instruksi Terakhir">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <strong for="terapi" class="form-label">Terapi:</strong>
+                </div>
+            </div>
+
+            <!-- Medication Table -->
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Nama Obat</th>
+                            <th>Jam Pemberian</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="Nama Obat"></td>
+                            <td><input type="time" class="form-control"></td>
+                            <td><textarea class="form-control" rows="2" placeholder="Keterangan"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="Nama Obat"></td>
+                            <td><input type="time" class="form-control"></td>
+                            <td><textarea class="form-control" rows="2" placeholder="Keterangan"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="Nama Obat"></td>
+                            <td><input type="time" class="form-control"></td>
+                            <td><textarea class="form-control" rows="2" placeholder="Keterangan"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="Nama Obat"></td>
+                            <td><input type="time" class="form-control"></td>
+                            <td><textarea class="form-control" rows="2" placeholder="Keterangan"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-end submit-btn">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

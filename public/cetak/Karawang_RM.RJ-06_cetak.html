@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .form-container {
+        width: 800px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+        border: 2px solid #000;
+        padding: 20px;
+        position: relative;
+      }
+
+      .form-number {
+        position: absolute;
+        top: -20px;
+        right: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .left-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .hospital-address {
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      .form-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 24px;
+        margin-right: 100px;
+      }
+
+      .divider {
+        border-bottom: 1px solid #000;
+        margin: 20px 0;
+      }
+
+      .patient-info {
+        margin-bottom: 20px;
+      }
+
+      .patient-field {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      .patient-label {
+        width: 120px;
+      }
+
+      .rm-boxes {
+        display: inline-flex;
+        margin-left: 10px;
+      }
+
+      .rm-box {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #000;
+        margin-right: 5px;
+      }
+
+      .medical-table {
+        width: 70%;
+        border-collapse: collapse;
+      }
+
+      .medical-table td {
+        border: 1px solid #000;
+        padding: 8px;
+      }
+
+      .cough-field {
+        width: 50%;
+      }
+
+      .signature-section {
+        margin-top: 20px;
+        text-align: right;
+      }
+      .box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-number">RM.RJ-06</div>
+      
+      <div class="header">
+        <div class="left-content">
+          <img
+            class="logo"
+            alt="RSUD Karawang logo"
+            src="/api/placeholder/100/100"
+          />
+          <div class="hospital-address">Jalan Galuh Mas Raya No. 1 Karawang</div>
+        </div>
+        <div class="form-title">
+          FORMULIR SCREENING<br />
+          TUBERKULOSIS
+        </div>
+      </div>
+      
+      <div class="divider"></div>
+
+      <div class="patient-info">
+        <div class="box">
+          <div class="patient-label">Identitas Pasien:</div>
+          <div class="box">
+          <div>No. RM</div>
+          <div class="rm-boxes">
+            <div class="rm-box"></div>
+            <div class="rm-box"></div>
+            <div class="rm-box"></div>
+            <div class="rm-box"></div>
+          </div>
+        </div>
+        </div>
+        <div class="patient-field">
+          <div class="patient-label">Nama Pasien</div>
+          <div>: _________________________</div>
+        </div>
+        <div class="patient-field">
+          <div class="patient-label">Umur</div>
+          <div>: _____ Thn/Bln/Hari*, L/P)*</div>
+        </div>
+        <div class="patient-field">
+          <div class="patient-label">Alamat</div>
+          <div>: _________________________</div>
+        </div>
+      </div>
+
+      <table class="medical-table">
+        <tr>
+          <td class="cough-field">Batuk: ...................... Hari</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2">Jika batuk 2 - 3 minggu atau lebih nyatakan:</td>
+        </tr>
+        <tr>
+          <td>1. Riwayat kontak (BTA + / Pengobatan TB)</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>2. Batuk berdahak</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>3. Bagaimana warnanya?</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>4. Jumlahnya bertambah?</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>5. Batuk berdarah?</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>Demam / Meriang</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>Keringat malam</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>Berat badan menurun</td>
+          <td>Ya / Tidak</td>
+        </tr>
+        <tr>
+          <td>Nafsu makan berkurang</td>
+          <td>Ya / Tidak</td>
+        </tr>
+      </table>
+
+      <div class="signature-section">
+        <p>Karawang, _____________ 20__</p>
+        <p>Petugas Jaga / Pendaftaran</p>
+        <br /><br />
+        <p>(________________________)</p>
+        <p>Ttd & Nama Jelas</p>
+        <p><small>REV: 01/07-2022/RM.RJ-06</small></p>
+      </div>
+    </div>
+  </body>
+</html>

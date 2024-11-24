@@ -1,0 +1,285 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+        .form-container {
+            width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            border: 2px solid #000;
+            padding: 20px;
+            position: relative;
+        }
+
+        .form-number {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+        }
+
+        .header {
+            align-items: center;
+        }
+
+        .left-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .hospital-address {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .form-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .divider {
+            border-bottom: 1px solid #000;
+            margin: 20px 0;
+        }
+
+        .rm-boxes {
+            display: flex;
+            gap: 5px;
+        }
+
+        .rm-input {
+            width: 40px;
+            text-align: center;
+        }
+
+        .table-custom th,
+        .table-custom td {
+            vertical-align: middle;
+        }
+
+        .signature-section {
+            margin-top: 20px;
+        }
+        .but {
+            text-align: right;
+        }
+        .room {
+            display: flex;
+            justify-content: space-between;
+        }
+        .table-custom {
+            border-collapse: collapse; /* Ensures no spacing between table cells */
+            border: none; /* Remove outer table border */
+        }
+
+        .table-custom td,
+        .table-custom th {
+            border: none; /* Remove cell borders */
+        }
+
+        .table-custom th {
+            text-align: left; /* Optional: Align table headers to the left */
+        }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+        <div class="form-number">RM.RJ-06</div>
+
+        <div class="header">
+            <div class="form-title">
+            FORMULIR SCREENING<br />
+            TUBERKULOSIS
+            </div>
+        </div>
+        <div class="but">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <form class="needs-validation" novalidate>
+            <!-- Patient Information -->
+            <div class="mb-4">
+            <div class="row mb-3 room">
+                <label class="col-sm-3 col-form-label">Identitas Pasien</label>
+                <div class="col-sm-2">
+                <label style="position: absolute; right: 210px">No. RM:</label>
+                </div>
+                <div class="col-sm-3">
+                <div class="rm-boxes">
+                    <input type="text" class="form-control rm-input" maxlength="1" required />
+                    <input type="text" class="form-control rm-input" maxlength="1" required />
+                    <input type="text" class="form-control rm-input" maxlength="1" required />
+                    <input type="text" class="form-control rm-input" maxlength="1" required />
+                </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Nama Pasien</label>
+                <div class="col-sm-9">
+                <input type="text" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Umur</label>
+                <div class="col-sm-3">
+                <input type="number" class="form-control" required />
+                </div>
+                <div class="col-sm-6">
+                <select class="form-select" required>
+                    <option value="">Pilih satuan</option>
+                    <option value="Thn">Tahun</option>
+                    <option value="Bln">Bulan</option>
+                    <option value="Hari">Hari</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                <div class="col-sm-9">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" value="L" required />
+                    <label class="form-check-label">Laki-laki</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" value="P" required />
+                    <label class="form-check-label">Perempuan</label>
+                </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Alamat</label>
+                <div class="col-sm-9">
+                <textarea class="form-control" rows="2" required></textarea>
+                </div>
+            </div>
+            </div>
+
+            <!-- Medical Information -->
+            <div class="mb-4">
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Batuk</label>
+                <div class="col-sm-3">
+                <div class="input-group">
+                    <input type="number" class="form-control" required />
+                    <span class="input-group-text">Hari</span>
+                </div>
+                </div>
+            </div>
+
+            <table class="table table-custom">
+                <thead>
+                    <tr>
+                        <th colspan="2">Jika batuk 2 - 3 minggu atau lebih nyatakan:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. Riwayat kontak (BTA + / Pengobatan TB)</td>
+                        <td width="200">
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="q1" id="q1_yes" value="Ya" required>
+                                <label class="btn btn-outline-primary" for="q1_yes">Ya</label>
+                                <input type="radio" class="btn-check" name="q1" id="q1_no" value="Tidak">
+                                <label class="btn btn-outline-primary" for="q1_no">Tidak</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. Batuk berdahak</td>
+                        <td>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="q2" id="q2_yes" value="Ya" required>
+                                <label class="btn btn-outline-primary" for="q2_yes">Ya</label>
+                                <input type="radio" class="btn-check" name="q2" id="q2_no" value="Tidak">
+                                <label class="btn btn-outline-primary" for="q2_no">Tidak</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. Bagaimana warnanya?</td>
+                        <td>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="q4" id="q4_yes" value="Ya" required>
+                                <label class="btn btn-outline-primary" for="q4_yes">Ya</label>
+                                <input type="radio" class="btn-check" name="q4" id="q4_no" value="Tidak">
+                                <label class="btn btn-outline-primary" for="q4_no">Tidak</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. Jumlahnya bertambah?</td>
+                        <td>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="q4" id="q4_yes" value="Ya" required>
+                                <label class="btn btn-outline-primary" for="q4_yes">Ya</label>
+                                <input type="radio" class="btn-check" name="q4" id="q4_no" value="Tidak">
+                                <label class="btn btn-outline-primary" for="q4_no">Tidak</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. Batuk berdarah?</td>
+                        <td>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="q5" id="q5_yes" value="Ya" required>
+                                <label class="btn btn-outline-primary" for="q5_yes">Ya</label>
+                                <input type="radio" class="btn-check" name="q5" id="q5_no" value="Tidak">
+                                <label class="btn btn-outline-primary" for="q5_no">Tidak</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Demam / Meriang</td>
+                        <td>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="fever" id="fever_yes" value="Ya" required>
+                                <label class="btn btn-outline-primary" for="fever_yes">Ya</label>
+                                <input type="radio" class="btn-check" name="fever" id="fever_no" value="Tidak">
+                                <label class="btn btn-outline-primary" for="fever_no">Tidak</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <!-- Submit Button -->
+        </form>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script>
+        (function () {
+            "use strict";
+            var forms = document.querySelectorAll(".needs-validation");
+
+            Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener(
+                "submit",
+                function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add("was-validated");
+                },
+                false
+            );
+            });
+        })();
+        </script>
+    </body>
+    </html>

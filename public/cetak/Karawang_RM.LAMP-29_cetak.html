@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSUD KARAWANG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: relative;
+        }
+
+        .left-section {
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+
+        .left-section img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .left-section .text {
+            line-height: 1.2;
+        }
+
+        .left-section .text strong {
+            font-size: 16px;
+            display: block;
+        }
+
+        .left-section .text p {
+            margin: 3px 0;
+            font-size: 13px;
+        }
+
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .right-section img {
+            height: 80px;
+        }
+
+        .right-section .title-container {
+            text-align: center;
+        }
+
+        .right-section h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .right-section h2 {
+            margin: 5px 0 0;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .form-container {
+            border: 2px solid #000;
+            margin: 0 40px;
+            padding: 20px;
+        }
+
+        .header-section {
+            margin-bottom: 30px;
+        }
+
+        .date-section {
+            margin-bottom: 15px;
+            text-align: right;
+        }
+
+        .recipient-section {
+            margin-left: 0;
+            text-align: right;
+
+        }
+
+        .patient-info {
+            margin: 20px 0;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .label {
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        .label-colon {
+            margin: 0 5px;
+        }
+
+        .dotted-line {
+            flex: 1;
+            border-bottom: 1px dotted #000;
+            height: 1px;
+            margin: 0 5px;
+        }
+
+        .dotteds-line {
+            flex: 1;
+            border-bottom: 1px dotted #000;
+            height: 1px;
+            margin: 0 722px 0 0;
+            
+        }
+
+        .gender-section {
+            position: absolute;
+            left: 50%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .oxygen-section {
+            display: flex;
+            align-items: center;
+            gap: 150px;
+            margin: 20px 0;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .signature {
+            text-align: center;
+            width: 30%;
+        }
+
+        .footer {
+            text-align: right;
+            font-size: 10px;
+            margin-top: 10px;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <img src="/api/placeholder/80/80" alt="Logo Pemkab Karawang" />
+            <div class="text">
+                <strong>
+                    PEMERINTAH KABUPATEN KARAWANG<br>
+                    BADAN LAYANAN UMUM DAERAH<br>
+                    RUMAH SAKIT UMUM DAERAH<br>
+                    KABUPATEN KARAWANG
+                </strong>
+                <p>Jl. Galuh Mas Raya No. 1 Sukaharja Telukjambe Timur</p>
+                <p>Telp. (0267) 9010322, 9010314, IGD 640118 Fax (0267) 640686</p>
+                <p>Email: rsudkrw@yahoo.co.id</p>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <img src="/api/placeholder/80/80" alt="Logo RSUD Karawang" />
+            <div class="title-container">
+                <h1>SURAT PENGANTAR</h1>
+                <h2>PENDERITA</h2>
+            </div>
+        </div>
+
+        <div class="top-right">RM.LAMP-29</div>
+    </div>
+
+    <div class="form-container">
+        <div class="header-section">
+            <div class="date-section">
+                Karawang, .................................. 20.............
+            </div>
+            <div class="recipient-section">
+                Kepada<br>
+                Yth : TS .........................................................<br>
+                Di ................................................................
+            </div>
+        </div>
+
+        <div class="patient-info">
+            <p>Bersama ini kami kirimkan seorang penderita :</p>
+            
+            <div class="info-row">
+                <span class="label">Nama</span>
+                <span class="label-colon">:</span>
+                <span class="dotted-line"></span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">No. RM</span>
+                <span class="label-colon">:</span>
+                <span class="dotted-line"></span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Umur</span>
+                <span class="label-colon">:</span>
+                <span class="dotteds-line"></span>
+                <div class="gender-section">
+                    <span>Tahun/Bulan/Hari *)</span>
+                    Jenis Kelamin : 
+                    <label class="checkbox-label">
+                        &#9744;&nbsp; Laki-laki
+                    </label>
+                    <label class="checkbox-label">
+                         &#9744;&nbsp; Perempuan
+                    </label>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Pekerjaan</span>
+                <span class="label-colon">:</span>
+                <span class="dotted-line"></span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Alamat</span>
+                <span class="label-colon">:</span>
+                <span>Jalan/Dusun/Kp *) :</span>
+                <span class="dotted-line"></span>
+            </div>
+
+            <div class="info-row">
+                <span class="label"></span>
+                <span class="label-colon"></span>
+                <span>Desa/Kelurahan *) :</span>
+                <span class="dotted-line"></span>
+            </div>
+
+            <div class="info-row">
+                <span class="label"></span>
+                <span class="label-colon"></span>
+                <span>Kecamatan :</span>
+                <span class="dotted-line"></span>
+            </div>
+
+            <div class="info-row">
+                <span class="label"></span>
+                <span class="label-colon"></span>
+                <span>Kabupaten/Kota *) :</span>
+                <span class="dotted-line"></span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            Untuk mendapatkan pemeriksaan, pengobatan dan perawatan lebih lanjut dengan pengkajian 
+            <span class="dotted-line"></span>
+        </div>
+        <div class="info-row">.
+            <span class="dotted-line"></span>
+        </div>
+
+        <div class="info-row">
+            Konfirmasi kesediaan tempat (SPGDT) oleh 
+            <span class="dotted-line"></span>
+
+        </div>
+
+        <div class="info-row">
+            <span class="label">Kesadaran saat ini</span>
+            <span class="label-colon">:</span>
+            <span class="dotted-line"></span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Kesadaran / GCS</span>
+            <span class="label-colon">:</span>
+            <span class="dotted-line"></span>
+            <span>E :</span>
+            <span class="dotted-line"></span>
+            <span>V :</span>
+            <span class="dotted-line"></span>
+            <span>M :</span>
+            <span class="dotted-line"></span>
+            <span>=</span>
+            <span class="dotted-line"></span>
+        </div>
+
+        <div class="table-section">
+            <p><strong>Tindakan dan Pemeriksaan yang telah dikerjakan :</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tindakan / Pemeriksaan</th>
+                        <th>Sudah</th>
+                        <th>Belum</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IV Line</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Folley Cateter</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>N G T</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>E T T</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>O P A / M A Y O</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorium</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Rontgen</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>E K G</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Lain-lain</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="oxygen-section">
+            Pemberian Oksigen : ................. L/menit
+            <label class="checkbox-label">
+                &#9744;&nbsp; Nassal Kanule
+            </label>
+            <label class="checkbox-label">
+                &#9744;&nbsp; Simple Mask
+            </label>
+            <label class="checkbox-label">
+                &#9744;&nbsp; NRM
+            </label>
+        </div>
+
+        <div class="table-section">
+            <p><strong>Terapi yang didapatkan :</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Obat</th>
+                        <th>Jam Pemberian</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td height="40"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td height="40"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td height="40"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td height="40"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td height="40"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+
+
+          <!-- Signatures Section -->
+          <div style="position: relative; left: 480px;">
+           
+            </div>
+            <div class="signatures" style="display: flex; justify-content: space-between; padding-top: 20px">
+                <div class="signature" style="text-align: center; flex: 1">
+                <p>Petugas Yang Menerima,</p>
+                <br /><br /><br />
+                <p>(dr................................)</p>
+                <p>Ttd & Nama jelas</p>
+                </div>
+                <div class="signature" style="text-align: center; flex: 1">
+                <p>Petugas Yang Menyerahkan,</p>
+                <br /><br /><br />
+                <p>(dr................................)</p>
+                <p>Ttd & Nama jelas</p>
+                </div>
+                <div class="signature" style="text-align: center; flex: 1">
+                <p>Dokter RSUD Karawang,</p>
+                <br /><br /><br />
+                <p>(dr................................)</p>
+                <p>Ttd & Nama jelas</p>
+                </div>
+            </div>
+            </form>
+        </div>
+        <p style="font-size: 10px">Bertanda (*) dalam kotak yang dipilih</p>
+        <div class="footer">Rev : 04/07-2022/RM.UM-07</div>
+        </div>
+ 
+    </div>
+</body>
+</html>

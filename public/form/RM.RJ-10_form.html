@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serah Terima Pasien Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            margin: 20px;
+        }
+        .card {
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border: none; /* Remove card border */
+            position: relative; /* Positioning context for absolute elements */
+        }
+        .table td, .table th {
+            vertical-align: middle;
+            border: none; /* Remove table borders */
+        }
+        textarea.form-control, input.form-control {
+            border: 1px solid #ced4da; /* Light border for form inputs */
+        }
+        .submit-btn {
+            bottom: 20px; 
+            position: relative;
+        }
+        /* Align left for the columns */
+        .table td {
+            text-align: left;
+        }
+        .form-check-inline {
+            margin-right: 1rem !important;
+        }
+        .form-check-input {
+            margin-top: 0.3rem;
+        }
+        .form-label {
+            margin-bottom: 0.25rem;
+        }
+        .form-control-sm {
+            width: 120px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Card Wrapper -->
+        <div class="card">
+            <!-- Form Header -->
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <h3>FORMULIR INFORMASI DAN EDUKASI <br>
+
+                        PASIEN DAN KELUARGA TERINTEGRASI RAWAT JALAN</h3>
+                </div>
+                <!-- Submit Button -->
+                <div class="text-end submit-btn">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <hr>
+            </div>
+
+            
+
+          
+            <thead  >
+                <tr>
+                    <h5 class="mb-3"><b>PENGKAJIAN KEBUTUHAN INFORMASI DAN EDUKASI (DIISI OLEH PERAWAT) :</b></h5>
+                  
+                </tr>
+            </thead>
+            
+
+            <!-- 1 -->
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label"><strong>Persiapan:</strong></label>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Bahasa</label>
+                    <div class="col-sm-9">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bahasa" id="indonesia" value="indonesia">
+                            <label class="form-check-label" for="indonesia">Indonesia</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bahasa" id="inggris" value="inggris">
+                            <label class="form-check-label" for="inggris">Inggris</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bahasa" id="daerah" value="daerah">
+                            <label class="form-check-label" for="daerah">Daerah</label>
+                            <input type="text" class="form-control form-control-sm d-inline-block ms-2" placeholder="">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bahasa" id="lain-lain" value="lain-lain">
+                            <label class="form-check-label" for="lain-lain">Lain-lain</label>
+                            <input type="text" class="form-control form-control-sm d-inline-block ms-2" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Kebutuhan penterjemah</label>
+                    <div class="col-sm-9">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="penterjemah" id="ya" value="ya">
+                            <label class="form-check-label" for="ya">Ya</label>
+                        </div>
+                        <div class="form-check form-check-inline" style="position: relative; left: 53px;">
+                            <input class="form-check-input" type="radio" name="penterjemah" id="tidak" value="tidak">
+                            <label class="form-check-label" for="tidak">Tidak</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Pendidikan pasien</label>
+                    <div class="col-sm-9">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pendidikan" id="sd" value="sd">
+                            <label class="form-check-label" for="sd">SD</label>
+                        </div>
+                        <div class="form-check form-check-inline"  style="position: relative; left: 50px;">
+                            <input class="form-check-input" type="radio" name="pendidikan" id="sltp" value="sltp">
+                            <label class="form-check-label" for="sltp">SLTP</label>
+                        </div>
+                        <div class="form-check form-check-inline"  style="position: relative; left: 66px;">
+                            <input class="form-check-input" type="radio" name="pendidikan" id="slta" value="slta">
+                            <label class="form-check-label" for="slta">SLTA</label>
+                        </div>
+                        <div class="form-check form-check-inline" style="position: relative; left: 113px;">
+                            <input class="form-check-input" type="radio" name="pendidikan" id="s1" value="s1">
+                            <label class="form-check-label" for="s1">S1</label>
+                        </div>
+                        <div class="form-check form-check-inline" style="position: relative; left: 153px;">
+                            <input class="form-check-input" type="radio" name="pendidikan" id="lain-lain-pendidikan" value="lain-lain-pendidikan">
+                            <label class="form-check-label" for="lain-lain-pendidikan">Lain-lain</label>
+                            <input type="text" class="form-control form-control-sm d-inline-block ms-2" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Baca dan tulis</label>
+                    <div class="col-sm-9">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bacatulis" id="baik" value="baik">
+                            <label class="form-check-label" for="baik">Baik</label>
+                        </div>
+                        <div class="form-check form-check-inline"  style="position: relative; left: 41px;">
+                            <input class="form-check-input" type="radio" name="bacatulis" id="kurang" value="kurang">
+                            <label class="form-check-label" for="kurang">Kurang</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Pilihan cara belajar</label>
+                    <div class="col-sm-9">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="carabelajar" id="verbal" value="verbal">
+                            <label class="form-check-label" for="verbal">Verbal</label>
+                        </div>
+                        <div class="form-check form-check-inline"  style="position: relative; left: 27px;">
+                            <input class="form-check-input" type="radio" name="carabelajar" id="tulisan" value="tulisan">
+                            <label class="form-check-label" for="tulisan">Tulisan</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Budaya</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+<!-- 2: Hambatan -->
+<div class="card-body">
+    <div class="mb-3">
+        <label class="form-label"><strong>Hambatan:</strong></label>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="tidak-ada" value="tidak-ada">
+                <label class="form-check-label" for="tidak-ada">Tidak ada</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="budaya" value="budaya">
+                <label class="form-check-label" for="budaya">Budaya/agama/spiritual</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="gangguan-bicara" value="gangguan-bicara">
+                <label class="form-check-label" for="gangguan-bicara">Gangguan bicara</label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-check ">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="bahasa" value="bahasa">
+                <label class="form-check-label" for="bahasa">Bahasa <br></label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="emosional" value="emosional">
+                <label class="form-check-label" for="emosional">Emosional</label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="motivasi" value="motivasi">
+                <label class="form-check-label" for="motivasi">Motivasi kurang</label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="kognitif" value="kognitif">
+                <label class="form-check-label" for="kognitif">Kognitif terbatas</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="pendengaran" value="pendengaran">
+                <label class="form-check-label" for="pendengaran">Pendengaran terganggu</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="keyakinan" value="keyakinan">
+                <label class="form-check-label" for="keyakinan">Keyakinan</label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="penglihatan" value="penglihatan">
+                <label class="form-check-label" for="penglihatan">Penglihatan terganggu</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hambatan" id="fisik-lemah" value="fisik-lemah">
+                <label class="form-check-label" for="fisik-lemah">Fisik lemah</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="bahasa" id="lain-lain" value="lain-lain">
+                <label class="form-check-label" for="lain-lain">Lain-lain</label>
+                <input type="text" class="form-control form-control-sm d-inline-block ms-2" placeholder="">
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- 3: Kebutuhan -->
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label"><strong>Kebutuhan:</strong></label>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-md">
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" name="kebutuhan" id="proses-penyakit" value="proses-penyakit">
+                        <label class="form-check-label" for="proses-penyakit">Proses penyakit</label>
+                    </div>
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" name="kebutuhan" id="pengobatan" value="pengobatan">
+                        <label class="form-check-label" for="pengobatan">Pengobatan dan prosedur</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="checkbox" name="kebutuhan" id="hasil-pelayanan" value="hasil-pelayanan">
+                            <label class="form-check-label" for="hasil-pelayanan">Hasil pelayanan</label>
+                        </div>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="bahasa" id="lain-lain" value="lain-lain">
+                        <label class="form-check-label" for="lain-lain">Lain-lain</label>
+                        <input type="text" class="form-control form-control-sm d-inline-block ms-2" placeholder="">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="mb-3 ">
+                <label><strong>Kesiapan pasien/keluarga menerima edukasi:</strong></label>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="kesiapan-edukasi" id="edukasi-ya" value="ya">
+                    <label class="form-check-label" for="edukasi-ya">Ya</label>
+                </div>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="kesiapan-edukasi" id="edukasi-tidak" value="tidak">
+                    <label class="form-check-label" for="edukasi-tidak">Tidak</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+    <script>
+        // Enable/disable text inputs based on radio button selection
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const textInput = this.parentElement.querySelector('input[type="text"]');
+                if (textInput) {
+                    textInput.disabled = !this.checked;
+                    if (this.checked) {
+                        textInput.focus();
+                    } else {
+                        textInput.value = '';
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

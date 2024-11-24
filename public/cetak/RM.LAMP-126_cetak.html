@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Form</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        /* headrer */
+        .header {
+            width: 100%;
+            padding: 10px 0;
+            text-align: right;
+            font-weight: bold;
+        }
+        .content {
+            width: 100%;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            border-bottom: none;
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .content td {
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+        .center-text {
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        
+        
+        
+        /* rAWAT */
+        .dot-short {
+            display: inline-block;
+            border-bottom: 1px dotted #000;
+            width: 220px;
+        }
+        .assessment-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .assessment-table th,
+        .assessment-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+         
+        .assessment-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+ 
+     
+ 
+    </style>
+</head>
+<body>
+    <div class="header">
+        RM.LAMP-126
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <td width="10%">
+                    <img src="left-logo.png" alt="Left Logo" class="logo">
+                </td>
+                <td width="80%" class="center-text">
+                    <strong>PEMERINTAH KABUPATEN KARAWANG</strong><br>
+                    <strong>RUMAH SAKIT UMUM DAERAH</strong><br>
+                    Jalan Galuh Mas Raya No 1 Karawang<br>
+                    Telepon: (0267) 641041 Faks: (0267) 642813<br>
+                    Faksimile:(0267) 640666 Pos-el: rsudkrw@yahoo.co.id Kode pos 41361
+                </td>
+                <td width="10%">
+                    <img src="right-logo.png" alt="Right Logo" class="logo">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- New Emergency Assessment Section -->
+    <table class="assessment-table">
+        <tr>
+            <td colspan="7">
+                <div class="assessment-header">RESUME MEDIS RAWAT JALAN / IGD *)</div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="text-align: center; border-bottom: none;  vertical-align: top;">No.RM : </td>
+            <td  style="text-align: center; border-bottom: none;  vertical-align: top;">Nama Pasien :</td>
+            <td  style="text-align: center; border-bottom: none;  vertical-align: top;">Tanggal Lahir: </td>
+            <!-- Combine "Jenis Kelamin" and "L/P" in a single column using colspan and rowspan -->
+            <td colspan="2"  style="text-align: center; vertical-align: top; border-bottom: none;">
+                Jenis Kelamin :  
+            </td>
+            <td colspan="2" style="text-align: center; border-bottom: none;  vertical-align: top;">Jaminan :</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border-top: none;"> </td>
+            <td style="text-align: center; border-top: none;"> </td>
+            <td style="text-align: center; border-top: none;"> </td>
+            <td colspan="2" style="text-align: center; border-top: none;"> L / P *) </td>
+            <td colspan="2"  style="text-align: center; border-top: none;"> </td>
+        </tr>
+
+        
+        <!-- poliklinik -->
+        <tr>
+            <td style="text-align: center;"><strong><i>POLIKLINIK / IGD*)</i></strong></td>
+            <td colspan="2" style="border-bottom: none;"><i>Riwayat Masuk :</i></td>
+            <td colspan="4" style="border-bottom: none;"><i>Pemeriksaan Fisik :</i></td>
+        </tr>
+
+        <tr>
+            <td style="border-bottom: none;"></td>
+            <td colspan="2" height="100" style="border-top: none;"></td>
+            <td colspan="4" style="border-top: none;"></td>
+        </tr>
+        
+        <tr>
+            <td style="border-bottom: none; border-top: none;" ></td>
+            <td colspan="2" style="border-bottom: none; border-top: none;"> <i>Hasil Penunjang :</i></td>
+            <td colspan="3"><strong><i><center>Diagnosa:</center></i></strong></td>
+            <td colspan="1"><strong><center>ICD X</center></strong></td>
+        </tr>
+        <tr>
+            <td style="border-bottom: none; border-top: none;" ></td>
+            <td colspan="2" style="border-bottom: none; border-top: none;"> Laboratorium :</td>
+            <td colspan="1">Utama :</td>
+            <td colspan="2"> </td>
+            <td colspan="1"> </td>
+        </tr>
+
+        <tr>
+            <td style="border-bottom: none; border-top: none;" ></td>
+            <td colspan="2" style="border-bottom: none; border-top: none;"> 
+                <br>
+                <br>
+                <br>
+                Radiologi :
+              
+                <br>
+                <br>
+                <br>
+                <br>
+                Lain-lainnya :
+
+            </td>
+            <td colspan="1">Tambahan :</td>
+            <td colspan="2">1.ㅤㅤㅤㅤㅤ <br> <br> 2. <br> <br>3. <br> <br> 4. <br> <br> </td>
+            <td colspan="1"> 1.ㅤㅤㅤㅤㅤ <br> <br> 2. <br> <br>3. <br> <br> 4. <br> <br> </td>
+        </tr>
+
+        <tr>
+            <td style="border-top: none; text-align: center;" ><i>(tgl/bln/th-berobat)</i></td>
+            <td colspan="2" style=" border-top: none;" height="40"> 
+          
+            </td>
+            <td colspan="3"><center><b><i> Tindakan / Prosedur : </i></b></center></td>
+            <td colspan="1"><center><b><i>Kode Prosedur</i></b></center></td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="border-bottom: none;"><i>Obat / Terapi yang diberikan di RS :</i></td>
+            <td colspan="3" style="border-bottom: none;">1.</td>
+            <td colspan="1"style="border-bottom: none;">1.</td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="border-top: none;"> </td>
+            <td colspan="3" style="border-top: none;">2.ㅤㅤㅤㅤㅤ <br> <br> 3. <br> <br>4. <br> <br> </td>
+            <td colspan="1"style="border-top: none;">2.ㅤㅤㅤㅤㅤ <br> <br> 3. <br> <br>4. <br> <br> </td>
+        </tr>
+        
+        <tr>
+            <td colspan="3 " style="border-bottom: none;"><i>Obat / Terapi yang diberikan di RS :
+            </i></td>
+            <td colspan="4"><b><center><i>Pesan Penting :</i></center></b></td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="border-top: none;"></td>
+            <td colspan="1" height="60"> <i>Penyakit : </i></td>
+            <td colspan="3"></td>
+        </tr>
+        
+        <tr>
+            <td colspan="3" style="border-top: none; border-bottom: none;"><b><i>Keadaan Pasien Saat Keluar :</i></b> <br>
+                <br>
+                Sembuh / Pulang Atas Permintaan (APS) / Dirujuk /
+            </td>
+            <td colspan="1" height="60"><i>Gizi / Nutrisi</i></td>
+            <td colspan="3"></td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="border-top: none;">Meninggal *) Tgl. …………………….
+                <br>
+                <br>
+                Sembuh / Pulang Atas Permintaan (APS) / Dirujuk /
+                <br>
+                <br>
+                Berobat Jalan :
+                <br>
+                <br>
+                (Ke bagian : …………..…………..Tgl. …………..….. )
+
+            </td>
+            <td colspan="1" height="60">Keadaan Darurat :</td>
+            <td colspan="3"></td>
+        </tr>
+
+        <tr>
+            <td colspan="7" style="border-bottom: none;"> Lain-lain :</td>
+        </tr>
+        <tr>
+            <td colspan="7" style=" border-top: none;" height="50">  </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="border-bottom: none;"> <i><b> Tanda tangan Pasien / Keluarga :</b></i></td>
+            <td colspan="4" style="border-bottom: none;"> <i><b> Dokter Pemerikisa / DPJP : </b></i></td>
+        </tr>
+        <tr>
+            <td colspan="3" style=" border-top: none;" height="50">  </td>
+            <td colspan="4" style=" border-top: none;" height="50">  </td>
+        </tr>
+      
+     
+         
+        
+       
+    </table>
+
+
+
+ 
+
+    
+    
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        </div>
+        <div style="text-align: right;">
+       <i> Rev: 07/12-2022/RM.IGD-03 </i>
+        </div>
+    </div>
+
+    </body>
+</html>

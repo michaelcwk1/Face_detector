@@ -52,7 +52,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 3 }}  
+        transition={{ duration: 1, delay: 2 }}  
         whileInView={{ opacity: 1 }}  
         viewport={{ once: true }}  
       >
@@ -65,7 +65,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 5  }}  
+        transition={{ duration: 1, delay: 4  }}  
         whileInView={{ opacity: 1 }}  
       >
         Hal ini agar penguji dapat dengan mudah mengakses dan melihat hasil kerja saya secara langsung tanpa
@@ -76,7 +76,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 7 }}  
+        transition={{ duration: 1, delay: 5 }}  
         whileInView={{ opacity: 1 }}  
         viewport={{ once: true }}   
       >
@@ -88,7 +88,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 8 }}  
+        transition={{ duration: 1, delay: 6}}  
         whileInView={{ opacity: 1 }}  
         viewport={{ once: true }}  
       >
@@ -100,7 +100,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 9 }}  
+        transition={{ duration: 1, delay: 7 }}  
         whileInView={{ opacity: 1 }}  
         viewport={{ once: true }} 
       >
