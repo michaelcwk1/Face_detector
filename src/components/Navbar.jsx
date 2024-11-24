@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 const Navbar = ({
   authenticated,
   setAuthenticated,
-  setShowFaceRecognition,
   setShowModal,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading ] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 

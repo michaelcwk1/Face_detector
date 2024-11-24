@@ -1,45 +1,65 @@
 /* Modal styles */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 20;
-  }
-  
-  .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
 
-  
-  /* Success checkmark animation */
-  .success-animation {
-    position: fixed;
-    top: 40%;
-    left: 37%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: green;
-    transition: opacity 1s ease-out; /* Add fade-out transition */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+/* Success checkmark animation */
+.success-animation {
+  position: fixed;
+  top: 40%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: green;
+  transition: opacity 1s ease-out;  
+}
+
+.checkmark-icon {
+  width: 100px;
+  height: 100px;
+  stroke: green;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.hero-img {
+  max-width: 450px;
+  max-height: 500px;  
+  width: 100%;
+  border-radius: 1.5rem; 
+  animation: bounceTop 3s ease infinite;
+  opacity: 1;
+  transition: opacity 1s ease;
+  margin-top: 1rem;  
+}
+
+@keyframes bounceTop {
+  0%,
+  100% {
+    transform: translateY(-20px);
+    animation-timing-function: ease-in-out;
   }
-  
-  .checkmark-icon {
-    width: 100px;
-    height: 100px;
-    stroke: green;
+  50% {
+    transform: translateY(0);
+    animation-timing-function: ease-in-out;
   }
-  
-  /* Fade-out effect */
-  .fade-out {
-    opacity: 0;
-  }
-  
+}

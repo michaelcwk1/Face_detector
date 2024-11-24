@@ -11,7 +11,7 @@ import "./styles/app.css";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [showFaceRecognition, setShowFaceRecognition] = useState(false);
+  const [  setShowFaceRecognition] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
