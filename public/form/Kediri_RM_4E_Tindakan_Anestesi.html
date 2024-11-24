@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serah Terima Pasien Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body bg-light" style="max-height: 700px; overflow-y: auto;">
+                <div class="mt-4 mb-3 d-flex justify-content-start">
+                    <div class="card col-md-12 shadow">
+                        <div class="card-header text-center fw-bold text-white bg-primary">Persetujuan Tindakan Anestesi / Sedasi</div>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <!-- Button Save -->
+                    <button class="btn btn-primary me-2" onclick="saveForm()">
+                        <i class="fas fa-save"></i> Simpan
+                    </button>
+                    <!-- Button Reset -->
+                    <button class="btn btn-success me-2" onclick="resetForm()">
+                        <i class="fas fa-sync-alt"></i> Reset
+                    </button>
+                    <!-- Button Print -->
+                    <button class="btn btn-secondary" onclick="window.print()">
+                        <i class="fas fa-print"></i> Cetak
+                    </button>
+                </div>
+                <form id="patientForm">
+                <!-- 1 -->
+                <div class="mt-5">
+                    <div class="card  mb-3 d-flex justify-content-">
+                        <div class="card col-sm-3  shadow" style="border-radius: 12px; overflow: hidden; position: relative; bottom: 23px;">
+                            <div class="card-header  bg-light-subtle text-center fw-bold">Detail pasien :</div>
+                        </div>
+                        <div class="form-group row m-1">
+                            <label class="col-sm-3 col-form-label">Counter</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-6 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="Counter">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row m-1">
+                            <label class="col-sm-3 col-form-label">No. Rekam Medis</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-6 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="0-41-34-64">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row m-1">
+                            <label class="col-sm-3 col-form-label">Nama</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-4 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="ISNATIN, NY">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row m-1">
+                            <label class="col-sm-3 col-form-label">Tgk Lahir</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-4 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="date" class="form-control" id="" data-field=""  placeholder="Pembuat Pernyataan">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row m-1">
+                            <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-4 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="Perempuan">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row m-1">    
+                            <label class="col-sm-3 col-form-label">Alamat</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-4 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="DSN SUMBERINGIN RT 001 RW. 005 DS PETOK">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row m-1">    
+                            <label class="col-sm-3 col-form-label">Ruang Ranap</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-6 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="BOUGENVIL KLS 3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row m-1">    
+                            <label class="col-sm-3 col-form-label">DPJP</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-6 me-3 d-flex align-items-center">
+                                    :&nbsp;<input type="text" class="form-control" id="" data-field=""  placeholder="MOCH YUNUS, Sp. OT Dr">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="mt-5">
+                    <div class="card  mb-3 d-flex justify-content-">
+                        <div class="card col-sm-3  shadow" style="border-radius: 12px; overflow: hidden; position: relative; bottom: 23px;">
+                            <div class="card-header  bg-light-subtle text-center fw-bold">Pemberi informasi</div>
+                        </div>
+                        <div class="form-group row m-1">
+                            <label class="col-sm-1 col-form-label">Perawat</label>
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check col-sm-8 me-3 d-flex align-items-center">
+                                    :&nbsp; <select class="form-control" id="perawat" data-field="">
+                                        <option value="" disabled selected>Pilih Perawat</option>
+                                        <option value="perawat1">Perawat 1</option>
+                                        <option value="perawat2">Perawat 2</option>
+                                        <option value="perawat3">Perawat 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="mt-5">
+                    <div class="card  mb-3 d-flex justify-content-">
+                        <div class="card col-sm-3  shadow" style="border-radius: 12px; overflow: hidden; position: relative; bottom: 23px;">
+                            <div class="card-header  bg-light-subtle text-center fw-bold">TTD Pembuat Pernyataan</div>
+                        </div>
+                        <div class="form-group row m-1">
+                            <label class="col-sm-3 col-form-label">Yang membuat pernyataan :</label>
+                        </div>
+                        <div class="form-group col m-3">
+                            <div class="col-sm d-flex flex-wrap align-items-center" style="gap: 10px;">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="Pasien" data-field="" name="jenis">
+                                    <label class="form-check-label" for="Pasien">Pasien</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="Wali" data-field="" name="jenis">
+                                    <label class="form-check-label" for="Wali">Wali</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="Keluarga" data-field="" name="jenis">
+                                    <label class="form-check-label" for="Keluarga">Keluarga</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col m-3 mt-0">
+                            <div class="col-sm-6 d-flex align-items-center" style="gap: 10px;">
+                                <label class="form-check-label" for="namaSaksi">Nama </label>
+                                :&nbsp; <input type="text" class="form-control" id="namaSaksi" placeholder="Nama saksi pihak keluarga" maxlength="100">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group col m-3 mt-0">
+                            <div class="col-sm-8 d-flex align-items-center" style="gap: 10px;">
+                                <textarea class="form-control flex-grow-1" id="inputTextarea" rows="5" placeholder="Masukkan informasi di sini..."></textarea>
+                                <button type="button" class="btn btn-danger" onclick="resetTextarea()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+
+
+
+                     
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function resetTextarea() {
+            document.getElementById('inputTextarea').value = '';
+        }
+    </script>
+ 
+<!-- Bootstrap JS (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- FontAwesome for icons (optional) -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

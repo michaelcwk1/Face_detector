@@ -11,7 +11,7 @@ import "./styles/app.css";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [  setShowFaceRecognition] = useState(false);
+  const [setShowFaceRecognition] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
@@ -96,26 +96,15 @@ function App() {
               stroke="currentColor"
               className="checkmark-icon"
             >
-              <motion.path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 13l4 4L19 7"
-              />
+              <motion.path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
             </motion.svg>
           </motion.div>
         )}
 
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route
-            path="/form"
-            element={authenticated ? <Form /> : <LockedContent />}
-          />
-          <Route
-            path="/cetak"
-            element={authenticated ? <Cetak /> : <LockedContent />}
-          />
+          <Route path="/form" element={authenticated ? <Form /> : <LockedContent />} />
+          <Route path="/cetak" element={authenticated ? <Cetak /> : <LockedContent />} />
         </Routes>
       </div>
     </Router>

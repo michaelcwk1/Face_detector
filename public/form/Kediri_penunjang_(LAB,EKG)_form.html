@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serah Terima Pasien Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="card">
+        <div class="card-body bg-light" style="max-height: 800px; overflow-y: auto">
+          <div class="mt-4 mb-3 d-flex justify-content-start">
+            <div class="card col-md-12 shadow">
+              <div class="card-header text-center fw-bold text-white bg-primary">HASIL PEMERIKSAAN ECG/PA/LAB PK</div>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <!-- Button Cetak PA -->
+            <button class="btn btn-secondary me-2" onclick="window.print()">
+              <i class="fas fa-print"></i> Cetak PA
+            </button>
+            <!-- Button Cetak PK -->
+            <button class="btn btn-secondary me-2 text-white" onclick="window.print()">
+              <i class="fas fa-print"></i> Cetak PK
+            </button>
+          </div>
+          <form id="examForm">
+            <div class="card shadow" style="font-size: 13px;">
+              <div class="card-header bg-light">
+                <h6 class="mb-0">List Hasil Pembacaan</h6>
+              </div>
+              <div class="card-body">
+                <div class="row mb-3">
+                  <div class="col-md-2">
+                    <label class="form-label">TIPE</label>
+                    <select class="form-select" id="tipe" name="tipe">
+                      <option value="hasil">Hasil</option>
+                      <option value="ecg-pa">ECG/PA</option>
+                      <option value="lab-pk">Lab PK</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label">Tgl</label>
+                    <input type="date" class="form-control" id="tanggal" name="tanggal" value="2024-11-15"/>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label">Macam</label>
+                    <input type="text" class="form-control" id="macam" name="macam" placeholder="Macam Pemeriksaan..."/>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Hasil</label>
+                    <input type="text" class="form-control" id="hasil" name="hasil" placeholder="Hasil Pemeriksaan..."/>
+                  </div>
+                  <div class="col-md-1">
+                    <label class="form-label">&nbsp;</label>
+                    <button type="button" class="btn btn-success w-100 d-flex align-items-center justify-content-center" onclick="addData()">
+                      <span>Tambah</span>
+                      <i class="fas fa-plus ms-1"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="table-responsive mt-4">
+                  <table class="table table-bordered" id="dataTable">
+                    <thead class="table-light">
+                      <tr>
+                        <th width="5%">No</th>
+                        <th>Nama Tindakan</th>
+                        <th>Hasil</th>
+                        <th>Status File</th>
+                        <th width="15%">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                      <!-- Table rows will be dynamically added here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+        // Array to store the data
+        let examData = [];
+
+        // Function to add data to table
+        function addData() {
+          // Get form values
+          const tipe = document.getElementById('tipe').value;
+          const tanggal = document.getElementById('tanggal').value;
+          const macam = document.getElementById('macam').value;
+          const hasil = document.getElementById('hasil').value;
+
+          // Validate inputs
+          if (!macam || !hasil) {
+            alert('Please fill in all fields');
+            return;
+          }
+
+          // Create new data object
+          const newData = {
+            namaTindakan: `${macam} (${tipe})`,
+            hasil: hasil,
+            statusFile: 'Pending',
+            tanggal: tanggal
+          };
+
+          // Add to array
+          examData.push(newData);
+
+          // Update table
+          updateTable();
+
+          // Reset form fields
+          document.getElementById('examForm').reset();
+          document.getElementById('tanggal').value = '2024-11-15'; // Reset date to default
+        }
+
+        // Function to update table
+        function updateTable() {
+          const tableBody = document.getElementById('tableBody');
+          tableBody.innerHTML = ''; // Clear current table
+
+          examData.forEach((data, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td class="text-center">${index + 1}</td>
+              <td>${data.namaTindakan}</td>
+              <td>${data.hasil}</td>
+              <td>${data.statusFile}</td>
+              <td>
+                <div class="d-flex gap-1">
+                  <button class="btn btn-sm btn-danger" onclick="deleteData(${index})">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button class="btn btn-sm btn-primary" onclick="editData(${index})">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                </div>
+              </td>
+            `;
+            tableBody.appendChild(row);
+          });
+        }
+
+        // Function to delete data
+        function deleteData(index) {
+          if (confirm('Are you sure you want to delete this record?')) {
+            examData.splice(index, 1);
+            updateTable();
+          }
+        }
+
+        // Function to edit data
+        function editData(index) {
+          const data = examData[index];
+          const namaParts = data.namaTindakan.split(' (');
+          
+          document.getElementById('macam').value = namaParts[0];
+          document.getElementById('tipe').value = namaParts[1].replace(')', '');
+          document.getElementById('hasil').value = data.hasil;
+          document.getElementById('tanggal').value = data.tanggal;
+
+          // Remove the edited item
+          examData.splice(index, 1);
+          updateTable();
+        }
+      </script>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FontAwesome for icons (optional) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </body>
+</html>
