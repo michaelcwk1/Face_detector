@@ -39,11 +39,14 @@ const FaceRecognitionLogin = ({
         <div> </div>
       ) : (
         <>
-          <h2>Login dengan Wajah Anda</h2>
+          <h2 className="font-bold mb-4">Login dengan Wajah Anda</h2>
           <video
             id="videoInput"
             autoPlay
             muted
+            style={{
+              transform: "scaleX(-1)", // Balik video horizontal
+            }}
             ref={async (video) => {
               const stream = await navigator.mediaDevices.getUserMedia({
                 video: {}
