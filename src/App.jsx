@@ -6,9 +6,7 @@ import Cetak from "./pages/Cetak";
 import Form from "./pages/Form";
 import FaceRecognitionLogin from "./components/FaceRecognitionLogin";
 import { motion } from "framer-motion";
-import "./styles/modal.css";
-import "./styles/app.css";
-
+ 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [setShowFaceRecognition] = useState(false);

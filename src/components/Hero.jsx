@@ -31,7 +31,7 @@ const Hero = () => {
             stiffness: 80,
             damping: 10,
           }}
-          className="text-3xl md:text-6xl font-bold"
+          className="text-2xl md:text-6xl font-bold"
         >
           PT Evolusi Teknologi
         </motion.h1>
@@ -65,7 +65,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 4  }}  
+        transition={{ duration: 1, delay: 3  }}  
         whileInView={{ opacity: 1 }}  
       >
         Hal ini agar penguji dapat dengan mudah mengakses dan melihat hasil kerja saya secara langsung tanpa
@@ -76,7 +76,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 5 }}  
+        transition={{ duration: 1, delay: 4 }}  
         whileInView={{ opacity: 1 }}  
         viewport={{ once: true }}   
       >
@@ -88,7 +88,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 6}}  
+        transition={{ duration: 1, delay: 5}}  
         whileInView={{ opacity: 1 }}  
         viewport={{ once: true }}  
       >
@@ -100,7 +100,7 @@ const Hero = () => {
         className="text-justify"
         initial={{ opacity: 0 }}  
         animate={{ opacity: 1 }}  
-        transition={{ duration: 1, delay: 7 }}  
+        transition={{ duration: 1, delay: 6 }}  
         whileInView={{ opacity: 1 }}  
         viewport={{ once: true }} 
       >
