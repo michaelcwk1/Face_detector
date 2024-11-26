@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -8,21 +8,39 @@ const Navbar = ({
   setShowModal,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [loading ] = useState(false);
+  const [loading] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const handleLoginClick = () => {
     if (!authenticated) {
-      // Show the modal when user clicks Log In
       setShowModal(true);
     } else {
-      setAuthenticated(false); // Log out
+      setAuthenticated(false);
     }
   };
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false); // Tutup dropdown jika klik di luar elemen dropdown
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <div className="w-4/5 m-auto flex justify-between items-center py-5 relative z-10">
+    <div className="navv w-4/5 m-auto flex justify-between items-center py-5 relative z-10 ">
       <h1 className="text-xl font-bold">
         <Link to="/" className="hover:text-violet-500">
           Projek
@@ -62,7 +80,9 @@ const Navbar = ({
         </button>
       </div>
 
+      {/* Mobile ver */}
       <motion.div
+        ref={dropdownRef} // Tambahkan ref di sini
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{
           opacity: isOpen ? 1 : 0,

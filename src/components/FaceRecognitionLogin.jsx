@@ -35,7 +35,7 @@ const FaceRecognitionLogin = ({
       if (detections.length > 0) {
         setAuthenticated(true);
         setLoginSuccess(true);
-        setShowModal(false); // Tutup modal jika sukses
+        setShowModal(false);  
       } else {
         setAuthenticated(false);
       }
