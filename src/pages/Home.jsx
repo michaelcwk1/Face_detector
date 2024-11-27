@@ -2,22 +2,22 @@ import React from "react";
 import Hero from "../components/Hero";
 import Experience from "../components/Experience";
 import Project from "../components/Project";
-import Footer  from "../components/Footer";
+import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 
 const Home = () => {
   return (
     <div>
-      <section id="hero">
+      <section id="hero" className="min-h-screen">
         <Hero />
       </section>
-      <section id="experience">
+      <section id="experience" className="min-h-screen">
         <Experience />
       </section>
-      <section id="project">
+      <section id="project" className="min-h-screen">
         <Project />
       </section>
-      <section id="contact">
+      <section id="contact" className="min-h-screen">
         <Contact />
       </section>
       <section id="footer">

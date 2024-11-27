@@ -19,9 +19,10 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false); // Tutup dropdown jika klik di luar elemen dropdown
+      setIsOpen(false); // Close dropdown if clicked outside
     }
   };
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["hero", "experience", "project", "contact"];
@@ -62,6 +63,14 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
     };
   }, [isOpen]);
 
+  const handleScrollClick = (target) => {
+    setIsOpen(false); // Close the menu on click
+    const element = document.getElementById(target);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="sticky-nav">
       <div className="navbar-container">
@@ -73,22 +82,22 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
 
         <ul className="hidden md:flex items-center space-x-5">
           <li>
-            <a href="#hero" className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("hero")} className="hover:text-violet-500">
               Profile
             </a>
           </li>
           <li>
-            <a href="#experience" className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("experience")} className="hover:text-violet-500">
               Journey
             </a>
           </li>
           <li>
-            <a href="#project" className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("project")} className="hover:text-violet-500">
               Project
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("contact")} className="hover:text-violet-500">
               Contact
             </a>
           </li>
@@ -108,9 +117,10 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
             ☰
           </button>
         </div>
-        {/* Mobile ver */}
+
+        {/* Mobile menu */}
         <motion.div
-          ref={dropdownRef} // Tambahkan ref di sini
+          ref={dropdownRef}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: isOpen ? 1 : 0,
@@ -123,25 +133,26 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
         >
           <ul className="flex flex-col items-center space-y-3 py-3">
             <li>
-              <a href="#hero" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+              <a onClick={() => handleScrollClick("hero")} className="hover:text-violet-500">
                 Profile
               </a>
             </li>
             <li>
-              <a href="#experience" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+              <a onClick={() => handleScrollClick("experience")} className="hover:text-violet-500">
                 Journey
               </a>
             </li>
             <li>
-              <a href="#project" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+              <a onClick={() => handleScrollClick("project")} className="hover:text-violet-500">
                 Project
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+              <a onClick={() => handleScrollClick("contact")} className="hover:text-violet-500">
                 Contact
               </a>
             </li>
+
             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link to="/cetak" className="hover:text-violet-500">
                 Cetak
