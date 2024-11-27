@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Home from "./pages/Home";
 import Cetak from "./pages/Cetak";
 import Form from "./pages/Form";
 import FaceRecognitionLogin from "./components/FaceRecognitionLogin";
 import { motion } from "framer-motion";
- 
+
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [setShowFaceRecognition] = useState(false);
@@ -100,7 +100,7 @@ function App() {
         )}
 
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route path="/" element={<Home />} />
           <Route path="/form" element={authenticated ? <Form /> : <LockedContent />} />
           <Route path="/cetak" element={authenticated ? <Cetak /> : <LockedContent />} />
         </Routes>

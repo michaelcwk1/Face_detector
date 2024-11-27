@@ -3,8 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* .full-screen-background {
+/* 
+.full-screen-background {
   width: 100%;
   min-height: 100vh;
   background-image: url("/bg-img2.png");
@@ -21,6 +21,7 @@ html {
   height: 100%;
   overflow-x: hidden;
   font-family: poppins;
+  scroll-behavior: smooth;
 }
 
 .locked-content {
@@ -123,7 +124,7 @@ html {
   }
   
   .hero-img {
-    max-width: 450px;
+    max-width: 550px;
     max-height: 500px;  
     width: 100%;
     border-radius: 1.5rem; 
@@ -167,4 +168,7 @@ html {
     align-items: center;
   }
   
-  
+ 
+  .linker {
+    color: #3C4048;
+}

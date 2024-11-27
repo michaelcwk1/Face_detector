@@ -22,6 +22,33 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
       setIsOpen(false); // Tutup dropdown jika klik di luar elemen dropdown
     }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["hero", "experience", "project", "contact"];
+      let currentActiveLink = "hero";
+
+      for (let i = 0; i < sections.length; i++) {
+        const section = document.getElementById(sections[i]);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (
+            window.pageYOffset >= sectionTop - sectionHeight * 0.5 &&
+            window.pageYOffset < sectionTop + sectionHeight - sectionHeight * 0.5
+          ) {
+            currentActiveLink = sections[i];
+            break;
+          }
+        }
+      }
+
+      setActiveLink(currentActiveLink);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -40,27 +67,32 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
       <div className="navbar-container">
         <h1 className="text-xl font-bold">
           <Link to="/" className="hover:text-violet-500">
-            Projek
+            Michael
           </Link>
         </h1>
 
-        <motion.ul
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, staggerChildren: 0.1 }}
-          className="hidden md:flex items-center space-x-5"
-        >
-          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Link to="/cetak" className="hover:text-violet-500">
-              Cetak
-            </Link>
-          </motion.li>
-          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Link to="/form" className="hover:text-violet-500">
-              Form
-            </Link>
-          </motion.li>
-        </motion.ul>
+        <ul className="hidden md:flex items-center space-x-5">
+          <li>
+            <a href="#hero" className="hover:text-violet-500">
+              Profile
+            </a>
+          </li>
+          <li>
+            <a href="#experience" className="hover:text-violet-500">
+              Journey
+            </a>
+          </li>
+          <li>
+            <a href="#project" className="hover:text-violet-500">
+              Project
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:text-violet-500">
+              Contact
+            </a>
+          </li>
+        </ul>
 
         <motion.button
           whileHover={{ scale: 1.2 }}
@@ -90,6 +122,26 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
           } py-2 px-3`}
         >
           <ul className="flex flex-col items-center space-y-3 py-3">
+            <li>
+              <a href="#hero" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+                Profile
+              </a>
+            </li>
+            <li>
+              <a href="#experience" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+                Journey
+              </a>
+            </li>
+            <li>
+              <a href="#project" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+                Project
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-violet-500" onClick={() => setIsOpen(false)}>
+                Contact
+              </a>
+            </li>
             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link to="/cetak" className="hover:text-violet-500">
                 Cetak
@@ -100,6 +152,7 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
                 Form
               </Link>
             </motion.li>
+
             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <motion.button
                 onClick={handleLoginClick}
