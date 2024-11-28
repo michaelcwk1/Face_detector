@@ -17,7 +17,7 @@ const Home = () => {
       <section id="project" className="min-h-screen">
         <Project />
       </section>
-      <section id="contact" className="min-h-screen">
+      <section id="contact">
         <Contact />
       </section>
       <section id="footer">

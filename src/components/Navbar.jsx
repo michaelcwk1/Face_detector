@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [loading] = useState(false);
   const dropdownRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -19,37 +21,9 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false); // Close dropdown if clicked outside
+      setIsOpen(false);
     }
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["hero", "experience", "project", "contact"];
-      let currentActiveLink = "hero";
-
-      for (let i = 0; i < sections.length; i++) {
-        const section = document.getElementById(sections[i]);
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-
-          if (
-            window.pageYOffset >= sectionTop - sectionHeight * 0.5 &&
-            window.pageYOffset < sectionTop + sectionHeight - sectionHeight * 0.5
-          ) {
-            currentActiveLink = sections[i];
-            break;
-          }
-        }
-      }
-
-      setActiveLink(currentActiveLink);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -64,12 +38,35 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
   }, [isOpen]);
 
   const handleScrollClick = (target) => {
-    setIsOpen(false); // Close the menu on click
+    setIsOpen(false);
+    
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTarget: target } });
+    } else {
+      // If on home page, scroll directly
+      scrollToTarget(target);
+    }
+  };
+
+  const scrollToTarget = (target) => {
     const element = document.getElementById(target);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Handle scroll target when navigating from another page
+  useEffect(() => {
+    if (location.pathname === '/') {
+      const state = location.state;
+      if (state && state.scrollTarget) {
+        scrollToTarget(state.scrollTarget);
+        // Clear the state to prevent repeated scrolling
+        window.history.replaceState({}, document.title);
+      }
+    }
+  }, [location]);
 
   return (
     <div className="sticky-nav">
@@ -82,22 +79,22 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
 
         <ul className="hidden md:flex items-center space-x-5">
           <li>
-            <a onClick={() => handleScrollClick("hero")} className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("hero")} className="hover:text-violet-500 cursor-pointer">
               Profile
             </a>
           </li>
           <li>
-            <a onClick={() => handleScrollClick("experience")} className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("experience")} className="hover:text-violet-500 cursor-pointer">
               Journey
             </a>
           </li>
           <li>
-            <a onClick={() => handleScrollClick("project")} className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("project")} className="hover:text-violet-500 cursor-pointer">
               Project
             </a>
           </li>
           <li>
-            <a onClick={() => handleScrollClick("contact")} className="hover:text-violet-500">
+            <a onClick={() => handleScrollClick("contact")} className="hover:text-violet-500 cursor-pointer">
               Contact
             </a>
           </li>
@@ -133,22 +130,22 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
         >
           <ul className="flex flex-col items-center space-y-3 py-3">
             <li>
-              <a onClick={() => handleScrollClick("hero")} className="hover:text-violet-500">
+              <a onClick={() => handleScrollClick("hero")} className="hover:text-violet-500 cursor-pointer">
                 Profile
               </a>
             </li>
             <li>
-              <a onClick={() => handleScrollClick("experience")} className="hover:text-violet-500">
+              <a onClick={() => handleScrollClick("experience")} className="hover:text-violet-500 cursor-pointer">
                 Journey
               </a>
             </li>
             <li>
-              <a onClick={() => handleScrollClick("project")} className="hover:text-violet-500">
+              <a onClick={() => handleScrollClick("project")} className="hover:text-violet-500 cursor-pointer">
                 Project
               </a>
             </li>
             <li>
-              <a onClick={() => handleScrollClick("contact")} className="hover:text-violet-500">
+              <a onClick={() => handleScrollClick("contact")} className="hover:text-violet-500 cursor-pointer">
                 Contact
               </a>
             </li>
