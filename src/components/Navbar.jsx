@@ -39,10 +39,10 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
 
   const handleScrollClick = (target) => {
     setIsOpen(false);
-    
+
     // If not on home page, navigate to home first
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTarget: target } });
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTarget: target } });
     } else {
       // If on home page, scroll directly
       scrollToTarget(target);
@@ -58,7 +58,7 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
 
   // Handle scroll target when navigating from another page
   useEffect(() => {
-    if (location.pathname === '/') {
+    if (location.pathname === "/") {
       const state = location.state;
       if (state && state.scrollTarget) {
         scrollToTarget(state.scrollTarget);
@@ -98,6 +98,16 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
               Contact
             </a>
           </li>
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link to="/cetak" className="hover:text-violet-500">
+              Cetak
+            </Link>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link to="/form" className="hover:text-violet-500">
+              Form
+            </Link>
+          </motion.li>
         </ul>
 
         <motion.button
