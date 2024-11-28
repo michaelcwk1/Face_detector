@@ -42,7 +42,7 @@ const Experience = () => {
   }, [controls, inView]);
 
   const lineVariants = {
-    visible: { height: "80%", transition: { duration: 2 } },
+    visible: { height: "85%", transition: { duration: 2 } },
   };
 
   return (
@@ -68,53 +68,61 @@ const Experience = () => {
       />
       <TimelineItem
         side="left"
-        title="Frontend Developer"
-        date="Jan 2023 - Present"
-        description="Worked on building responsive web applications."
+        title="Landing Page"
+        date="01 Sep - 20 Sep 2024"
+        description="Belajar Membuat Landing Page dengan studi kasus Perpustakaan "
         index={0} // Indeks untuk animasi
       />
       <TimelineItem
         side="right"
-        title="Backend Developer"
-        date="Jun 2021 - Dec 2022"
-        description="Designed and maintained server-side applications."
-        index={1} // Indeks untuk animasi
+        title="Projek 1 Done"
+        date="20 Sep - 25 Sep 2024"
+        description="Projek Frontend Web Perpustakaan SmartLib dan telah di konversi ke bentuk Aplikasi"
+        index={1} 
       />
       <TimelineItem
         side="left"
-        title="Internship"
-        date="Jan 2021 - May 2021"
-        description="Developed simple APIs and worked on small projects."
-        index={2} // Indeks untuk animasi
+        title="Postgre SQL"
+        date="25 Sep - 01 Oct 2024"
+        description="Mempelajari cara kerja Postgre SQL"
+        index={2} 
       />
       <TimelineItem
         side="right"
-        title="Backend Developer"
-        date="Jun 2021 - Dec 2022"
-        description="Designed and maintained server-side applications."
-        index={3} // Indeks untuk animasi
+        title="Projek 2 Cetak / Form"
+        date="01 Oct - 10 Nov 2024"
+        description="1 Bulan kita membantu perusahan mengerjakan Cetak / Form dari beberapa Client dari PT Evotek"
+        index={3}  
       />
       <TimelineItem
         side="left"
-        title="Internship"
-        date="Jan 2021 - May 2021"
-        description="Developed simple APIs and worked on small projects."
-        index={4} // Indeks untuk animasi
+        title="Projek 3 Iot"
+        date="10 Nov - 23 Nov 2024"
+        description="Membuat Website untuk mempermudahkan Hasil Projek yang telah di kerjakan dengan sentuhan konsep Iot "
+        index={4}  
       />
       <TimelineItem
         side="right"
-        title="Backend Developer"
-        date="Jun 2021 - Dec 2022"
-        description="Designed and maintained server-side applications."
-        index={5} // Indeks untuk animasi
+        title="Konsep API dan CRM"
+        date="23 Nov - 20 Dec 2024"
+        description="Mempelajari struktur server PT Evotek konsep MVC dengan Codeigniter "
+        index={5}  
       />
       <TimelineItem
         side="left"
-        title="Internship"
-        date="Jan 2021 - May 2021"
-        description="Developed simple APIs and worked on small projects."
-        index={6} // Indeks untuk animasi
+        title="Projek 4 POS"
+        date="01 Jan - 20 Jan 2025"
+        description="Membangun POS management system"
+        index={6}  
       />
+      <TimelineItem
+        side="right"
+        title="Persiapan Hasil Akhir Laporan"
+        date="20 Jan - 31 Jan 2025"
+        description="Mempersiapkan Laporan dan Projek untuk Hasil Akhir magang 5 bulan"
+        index={7} 
+      />
+ 
     </div>
   );
 };
