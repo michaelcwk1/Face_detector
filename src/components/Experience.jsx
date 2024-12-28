@@ -20,8 +20,8 @@ const TimelineItem = ({ side, title, date, description, index }) => {
       animate="visible"
     >
       <div className={`w-1/2 p-4 ${side === "right" ? "text-right" : ""}`}>
-        <h3 className="md:text-xl font-bold">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <h3 className="md:text-xl font-bold" style={{ whiteSpace: "nowrap" }}>{title}</h3>
+        <p className="text-gray-600" >{description}</p>
         <span className="text-sm text-gray-400  ">{date}</span>
       </div>
       <div className="w-10 h-10 bg-gray-400 rounded-full border-4 m-2  "></div>
@@ -71,13 +71,13 @@ const Experience = () => {
         title="Landing Page"
         date="01 Sep - 20 Sep 2024"
         description="Belajar Membuat Landing Page dengan studi kasus Perpustakaan "
-        index={0} // Indeks untuk animasi
+        index={0}
       />
       <TimelineItem
         side="right"
-        title="Projek 1 Done"
+        title="Projek 1 Website "
         date="20 Sep - 25 Sep 2024"
-        description="Projek Frontend Web Perpustakaan SmartLib dan telah di konversi ke bentuk Aplikasi"
+        description="Landing page Web Perpustakaan SmartLib dan telah di konversi ke bentuk Aplikasi"
         index={1} 
       />
       <TimelineItem
@@ -103,22 +103,22 @@ const Experience = () => {
       />
       <TimelineItem
         side="right"
-        title="Konsep API dan CRM"
-        date="23 Nov - 20 Dec 2024"
-        description="Mempelajari struktur server PT Evotek konsep MVC dengan Codeigniter "
+        title="Konsep API dan MVC"
+        date="23 Nov - 10 Dec 2024"
+        description="Mempelajari struktur server PT Evotek konsep API dan MVC "
         index={5}  
       />
       <TimelineItem
         side="left"
-        title="Projek 4 POS"
-        date="01 Jan - 20 Jan 2025"
-        description="Membangun POS management system"
+        title="Projek 4 EvoSisTask"
+        date="10 Dec - 23 Dec 2024"
+        description="Rancang bangung aplikasi EvoSisTask"
         index={6}  
       />
       <TimelineItem
         side="right"
-        title="Persiapan Hasil Akhir Laporan"
-        date="20 Jan - 31 Jan 2025"
+        title="Laporan dan sidang"
+        date="23 Dec - 20 Jan 2025"
         description="Mempersiapkan Laporan dan Projek untuk Hasil Akhir magang 5 bulan"
         index={7} 
       />

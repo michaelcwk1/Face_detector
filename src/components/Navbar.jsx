@@ -56,13 +56,11 @@ const Navbar = ({ authenticated, setAuthenticated, setShowModal }) => {
     }
   };
 
-  // Handle scroll target when navigating from another page
   useEffect(() => {
     if (location.pathname === "/") {
       const state = location.state;
       if (state && state.scrollTarget) {
         scrollToTarget(state.scrollTarget);
-        // Clear the state to prevent repeated scrolling
         window.history.replaceState({}, document.title);
       }
     }
